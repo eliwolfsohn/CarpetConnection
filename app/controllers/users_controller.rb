@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   end
 
   def show
+
   end
 
   def create
@@ -19,4 +20,14 @@ class UsersController < ApplicationController
 
   def delete
   end
+
+  def user_params
+
+  end
+
+  def find_user
+    @user = User.find(:id)
+  end
+
+
 end
