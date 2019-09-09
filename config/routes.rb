@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'carpet/:id', to: 'carpets#show', as: 'show'
+  get 'carpets/:id', to: 'carpets#show'
 
   devise_for :users
   root to: 'pages#home'
