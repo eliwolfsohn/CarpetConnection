@@ -15,6 +15,6 @@ class CarpetsController < ApplicationController
   private
 
   def carpet_params
-    params.require(:carpet).permit(:name)
+    params.require(:carpet).permit(:name, :price, :description, :speed, :passengers)
   end
 end
