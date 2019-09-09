@@ -6,6 +6,7 @@ class CarpetsController < ApplicationController
 
   def show
     find_carpet
+    @booking = Booking.new
   end
 
   def new
