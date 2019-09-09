@@ -18,7 +18,7 @@ class CarpetsController < ApplicationController
   def find_carpet
     @carpet = Carpet.find(params[:id])
   end
-  
+
   def index
     @carpets = Carpet.all
     # authorize @carpet
@@ -29,7 +29,5 @@ class CarpetsController < ApplicationController
   def carpet_params
     params.require(:carpet).permit(:name, :price, :description, :speed, :passengers)
   end
-  # def task_params
-  #   params.require(:carpet).permit(:name, :price, :description)
-  # end
+end
 end
