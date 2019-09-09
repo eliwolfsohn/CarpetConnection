@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
   get 'carpets/:id', to: 'carpets#show'
+  get  'carpets/:id/edit', to: 'carpets#edit'
+  patch  'carpets/:id', to: 'carpets#update'
+
 
   devise_for :users
   root to: 'pages#home'
