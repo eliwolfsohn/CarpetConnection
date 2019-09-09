@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
- devise_for :users
- get 'carpets/:id', to: 'carpets#show'
-
- 
+  resources :carpets
+  devise_for :users
   root to: 'pages#home'
-  get 'carpets', to: "carpets#index"
+  # resources :carpets only: [ :index ]
 end
