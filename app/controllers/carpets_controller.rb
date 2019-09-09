@@ -10,6 +10,10 @@ class CarpetsController < ApplicationController
     else
       render :new
     end
+
+  def index
+    @carpets = Carpet.all
+    # authorize @carpet
   end
 
   private
@@ -17,4 +21,7 @@ class CarpetsController < ApplicationController
   def carpet_params
     params.require(:carpet).permit(:name, :price, :description, :speed, :passengers)
   end
+  # def task_params
+  #   params.require(:carpet).permit(:name, :price, :description)
+  # end
 end
