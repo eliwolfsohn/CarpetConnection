@@ -1,6 +1,10 @@
-<h2><%= @carpet.name %></h2>
-<p><%= @carpet.price %></p>
-<p><%= @carpet.description %></p>
-<p><%= @carpet.user_id %></p>
-<p><%= @carpet.speed %></p>
-<p><%= @carpet.passengers %></p>
+
+
+
+<h2>Name: <strong><%=  @carpet.name %></strong></h2>
+<p>Price in Camels: <strong><%= @carpet.price %></strong></p>
+<p>Description: <strong><%= @carpet.description %></strong></p>
+<p>Speed (km/min): <strong><%= @carpet.speed %></strong></p>
+<p>Number of supported passengers: <strong><%= @carpet.passengers %></strong></p>
+<p>Owner: <strong><%= @carpet.user_id %></strong></p>
+

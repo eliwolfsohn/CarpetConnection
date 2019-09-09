@@ -15,6 +15,8 @@ class CarpetsController < ApplicationController
 
   def create
     @carpet = Carpet.new(carpet_params)
+    # @user = User.find(params[:user_id])
+    @carpet.user = current_user
     if @carpet.save
       redirect_to carpet_path(@carpet)
     else
@@ -29,7 +31,7 @@ class CarpetsController < ApplicationController
   def update
     @carpet = Carpet.find(params[:id])
     @carpet.update(carpet_params)
-    redirect_to show_path(@carpet)
+    redirect_to carpet_path(@carpet)
   end
 
   def destroy

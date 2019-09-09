@@ -1,12 +1,18 @@
-<%= simple_form_for @carpet do |c| %>
-  <%= c.label :name %>
-  <%= c.input_field :name %>
-  <%= c.label :price %>
-  <%= c.input_field :price %>
-  <%= c.label :speed %>
-  <%= c.input_field :speed %>
-  <%= c.label :passengers, collection: 0..50 %>
-  <%= c.input_field :passengers %>
-  <%= c.input_field :description %>
-  <%= c.submit 'Save this Carpet', class: "btn btn-success"%>
-<% end %>
+
+<div>
+  <%= simple_form_for @carpet do |c| %>
+    <%= c.label :name, "Name: " %>
+    <%= c.input_field :name %>
+    <%= c.label :price, "Camels"%>
+    <%= c.input_field :price %>
+    <%= c.label :speed, "Speed: "%>
+    <%= c.input_field :speed %>
+    <%= c.label :passengers, "Passengers: ", collection: 0..50 %>
+    <%= c.input_field :passengers %>
+    <%= c.label :description, "Description: " %>
+    <%= c.input_field :description %>
+    <%= c.submit 'Save this Carpet', class: "btn btn-success"%>
+  <% end %>
+</div>
+
+
