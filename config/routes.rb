@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
- get 'carpet/:id', to: 'carpets#show'
+ get 'carpet/:id', to: 'carpets#show', as: 'show'
 
   get 'users/delete'
   devise_for :users

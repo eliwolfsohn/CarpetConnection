@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 puts 'creating seeds ......'
-capets = Carpet.create([
+Carpet.create([
   { name: "Fast Chicken", price: 5, passengers: 3, speed: 3900, description: 'verz fast and very slow at the same time'},
   { name: "alladin", price: 100, passengers: 2, speed: 10000, description: 'Should take it to a drycleaner first'},
   { name: "CarBus", price: 50, passengers: 30, speed: 500, description: 'FUn RIde'},
