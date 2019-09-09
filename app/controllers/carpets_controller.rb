@@ -11,6 +11,14 @@ class CarpetsController < ApplicationController
       render :new
     end
 
+  def show
+    @carpet = Carpet.find(params[:id])
+  end
+
+  def find_carpet
+    @carpet = Carpet.find(params[:id])
+  end
+  
   def index
     @carpets = Carpet.all
     # authorize @carpet
