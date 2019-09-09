@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Carpet.create!([{
+  name: "Aladdin",
+  price: 5, passengers: 3,
+  speed: 3900,
+  description: "Helo there",
+  user_id: 1
+}])
