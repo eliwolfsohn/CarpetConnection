@@ -1,4 +1,14 @@
 class CarpetsController < ApplicationController
+
+  def index
+    @carpets = Carpet.all
+    # authorize @carpet
+  end
+
+  def show
+    find_carpet
+  end
+
   def new
     @carpet = Carpet.new
   end
@@ -10,9 +20,6 @@ class CarpetsController < ApplicationController
     else
       render :new
     end
-
-  def show
-    find_carpet
   end
 
   def edit
@@ -25,6 +32,12 @@ class CarpetsController < ApplicationController
     redirect_to show_path(@carpet)
   end
 
+  def destroy
+    @carpet = Carpet.find(params[:id])
+    @carpet.destroy
+    redirect_to carpets_path
+  end
+
   private
 
   def carpet_params
@@ -34,18 +47,4 @@ class CarpetsController < ApplicationController
   def find_carpet
     @carpet = Carpet.find(params[:id])
   end
-  
-  def index
-    @carpets = Carpet.all
-    # authorize @carpet
-  end
-
-  private
-
-  def carpet_params
-    params.require(:carpet).permit(:name, :price, :description, :speed, :passengers)
-  end
-  # def task_params
-  #   params.require(:carpet).permit(:name, :price, :description)
-  # end
 end
