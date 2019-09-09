@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'carpets/show'
   get 'users/index'
   get 'users/show'
   get 'users/create'
