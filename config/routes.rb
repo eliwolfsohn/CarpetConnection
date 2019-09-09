@@ -4,5 +4,4 @@ Rails.application.routes.draw do
     resources :bookings
   end
   root to: 'pages#home'
-  # resources :carpets only: [ :index ]
 end
