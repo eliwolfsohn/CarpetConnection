@@ -41,3 +41,11 @@ Carpet.create!([{
 #   }
 ])
 puts 'seeding concluded'
+
+Carpet.create!([{
+  name: "Aladdin",
+  price: 5, passengers: 3,
+  speed: 3900,
+  description: "Helo there",
+  user_id: 1
+}])
