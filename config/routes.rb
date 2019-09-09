@@ -1,11 +1,7 @@
 Rails.application.routes.draw do
-  get 'carpets/show'
-  get 'users/index'
-  get 'users/show'
-  get 'users/create'
-  get 'users/new'
-  get 'users/edit'
-  get 'users/update'
+
+ get 'carpet/:id', to: 'carpets#show'
+
   get 'users/delete'
   devise_for :users
   root to: 'pages#home'
