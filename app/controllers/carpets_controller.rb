@@ -1,13 +1,16 @@
 class CarpetsController < ApplicationController
 
   def index
-    @flats = Flat.geocoded #returns flats with coordinates
+    @carpets = Carpet.geocoded
 
-    @markers = @flats.map do |flat|
-    {
-      lat: flat.latitude,
-      lng: flat.longitude
-    }
+    @markers = @carpets.map do |carpet|
+      {
+        lat: carpet.latitude,
+        lng: carpet.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { carpet: carpet }),
+        image_url: helpers.asset_url('magiccarpet.jpg')
+      }
+    end
   end
 
   def show
