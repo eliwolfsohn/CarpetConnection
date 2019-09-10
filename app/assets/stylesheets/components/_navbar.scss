@@ -1,9 +1,11 @@
-.navbar {
-  background-color: rgba(124,0,0,0.4)
-}
-
 .navbar{
+  background-color: rgba(124,0,0,0.4);
   justify-content: space-between;
+
+  a {
+    font-family: "Gayathri", "sans-serif";
+
+  }
 }
 
 .navbar .navbar-collapse {
@@ -12,12 +14,17 @@
 
 .navbar .navbar-brand img {
   width: 40px;
-  color: white;
+
 }
 
-a {
-font-family: "Gayathri", "sans-serif";
+.navbar-brand {
+  color: #FFFFFF !important;
 }
 
+.navbar-nav .nav-link {
+  color: white !important;
+}
 
-
+.avatar {
+  height: 100%;
+}
