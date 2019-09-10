@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "emptying db ..."
+Booking.destroy_all
 Carpet.destroy_all
 
 
@@ -18,9 +19,8 @@ Carpet.create!([{
   speed: 3900,
   description: 'verz fast and very slow at the same time',
   address: "32 Ben Yehuda, Tel Aviv",
-  user_id: 1}
-
-,{
+  user_id: 1
+},{
   name: "CarBus",
   price: 50,
   passengers: 30,
@@ -34,47 +34,47 @@ Carpet.create!([{
   passengers: 1,
   speed: 1000,
   description: 'things are like this for a reason',
-  adress: "Munich",
+  address: "Munich",
   user_id: 1
 },{
-  name: "The Sand WHisperer",
+  name: "The Peter Experience",
   price: 100,
   passengers: 5,
   speed: 4000,
   description: 'better wear goggles',
-  adress: "San Fransisco",
+  address: "San Fransisco",
   user_id: 1
 },{
-  name: "The Sand WHisperer",
+  name: "Whoops look over there",
   price: 100,
   passengers: 5,
   speed: 4000,
-  description: 'better wear goggles',
-  adress: "San Fransisco",
+  description: 'bring a helmet',
+  address: "Tel Aviv",
   user_id: 1
 },{
-  name: "The Sand WHisperer",
+  name: "Cookie Monster",
   price: 100,
   passengers: 5,
   speed: 4000,
-  description: 'better wear goggles',
-  adress: "San Fransisco",
+  description: 'eat me',
+  address: "Bombay",
   user_id: 1
 },{
-  name: "The Sand WHisperer",
+  name: "General Ralala",
   price: 100,
   passengers: 5,
   speed: 4000,
-  description: 'better wear goggles',
-  adress: "San Fransisco",
+  description: 'Get me a beer',
+  address: "Moscow",
   user_id: 1
 },{
-  name: "The Sand WHisperer",
+  name: "For those about to rock",
   price: 100,
   passengers: 5,
   speed: 4000,
-  description: 'better wear goggles',
-  adress: "San Fransisco",
+  description: 'we salute you',
+  address: "Rome",
   user_id: 1
 }
 ])
