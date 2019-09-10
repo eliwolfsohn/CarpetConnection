@@ -1,9 +1,9 @@
 <h1>Carpet Connection</h1>
-  <h2>Available Carpets: </h2>
-    <ol>
-      <% @carpets.each do |carpet| %>
-      <li>
-      <%= link_to carpet.name.capitalize, carpet_path(carpet) %>
-      </li>
-    <% end %>
+<h2>Available Carpets: </h2>
+<ol>
+  <% @carpets.each do |carpet| %>
+  <li>
+    <%= link_to carpet.name.capitalize, carpet_path(carpet) %>
+  </li>
+  <% end %>
 </ol>
