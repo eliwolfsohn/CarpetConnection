@@ -13,7 +13,8 @@ Carpet.destroy_all
 puts 'creating seeds ......'
 Carpet.create!([{
   name: "Fast Chicken",
-  price: 5, passengers: 3,
+  price: 5,
+  passengers: 3,
   speed: 3900,
   description: 'verz fast and very slow at the same time',
   address: "32 Ben Yehuda, Tel Aviv",
@@ -21,7 +22,8 @@ Carpet.create!([{
 
 ,{
   name: "CarBus",
-  price: 50, passengers: 30,
+  price: 50,
+  passengers: 30,
   speed: 500,
   description: 'FUn RIde',
   address: "Jerusalem",
@@ -31,7 +33,7 @@ Carpet.create!([{
   price: 1,
   passengers: 1,
   speed: 1000,
-  description: 'hings are like this for a reason',
+  description: 'things are like this for a reason',
   adress: "Munich",
   user_id: 1
 },{
@@ -42,7 +44,39 @@ Carpet.create!([{
   description: 'better wear goggles',
   adress: "San Fransisco",
   user_id: 1
-  }
+},{
+  name: "The Sand WHisperer",
+  price: 100,
+  passengers: 5,
+  speed: 4000,
+  description: 'better wear goggles',
+  adress: "San Fransisco",
+  user_id: 1
+},{
+  name: "The Sand WHisperer",
+  price: 100,
+  passengers: 5,
+  speed: 4000,
+  description: 'better wear goggles',
+  adress: "San Fransisco",
+  user_id: 1
+},{
+  name: "The Sand WHisperer",
+  price: 100,
+  passengers: 5,
+  speed: 4000,
+  description: 'better wear goggles',
+  adress: "San Fransisco",
+  user_id: 1
+},{
+  name: "The Sand WHisperer",
+  price: 100,
+  passengers: 5,
+  speed: 4000,
+  description: 'better wear goggles',
+  adress: "San Fransisco",
+  user_id: 1
+}
 ])
 puts 'seeding concluded'
 
