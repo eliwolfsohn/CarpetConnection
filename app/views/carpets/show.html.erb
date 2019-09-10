@@ -11,3 +11,13 @@
 <%= link_to 'Edit Carpet', edit_carpet_path(@carpet), class: "btn btn-info" %>
 <%= link_to 'Delete this Waste of Fabric', carpet_path(@carpet), method: :delete, data: { confirm: "Are You Sure?"},class: "btn btn-warning" %>
 
+<div>
+  <%= simple_form_for([@carpet, @booking]) do |c| %>
+  <%= c.input :startdate, as: :string, required: false, input_html: {class: "datepicker"} %>
+  <%= c.input :enddate, as: :string, required: false, input_html: {class: "datepicker"} %>
+  <%= c.submit 'Book this Carpet', class: "btn btn-success"%>
+  <% end %>
+</div>
+
+
+

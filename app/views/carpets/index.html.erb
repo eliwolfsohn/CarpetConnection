@@ -2,8 +2,9 @@
 <h2>Available Carpets: </h2>
 <ol>
   <% @carpets.each do |carpet| %>
-  <li>
-    <%= link_to carpet.name.capitalize, carpet_path(carpet) %>
-  </li>
+    <li>
+      <%= link_to carpet.name.capitalize, carpet_path(carpet) %>
+    </li>
   <% end %>
 </ol>
+
