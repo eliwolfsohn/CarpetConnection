@@ -1,3 +1,7 @@
+# require pickadate/picker
+# require pickadate/picker.date
+# require pickadate/picker.time
+
 class CarpetsController < ApplicationController
   def index
     @carpets = Carpet.all
@@ -38,6 +42,12 @@ class CarpetsController < ApplicationController
     @carpet = Carpet.find(params[:id])
     @carpet.destroy
     redirect_to carpets_path
+  end
+
+  def datepicker_input(form, field)
+    content_tag :td, :data => {:provide => 'datepicker', 'date-format' => 'yyyy-mm-dd', 'date-autoclose' => 'true'} do
+      form.text_field field, class: 'form-control', placeholder: 'YYYY-MM-DD'
+    end
   end
 
   private

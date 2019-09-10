@@ -6,6 +6,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.carpet = Carpet.find(params[:carpet_id])
     if @booking.save!
+      flash[:notice] = "Booking confirmed"
       redirect_to carpets_path
     else
       redirect_to carpet_path(@carpet)
