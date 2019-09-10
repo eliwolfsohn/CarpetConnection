@@ -1,0 +1,10 @@
+<h1>My Bookings</h1>
+<ol>
+  <% @bookings.each do |b| %>
+    <li>
+      <%= link_to b.startdate, carpet_booking_path(b.carpet, b) %>
+    </li>
+  <% end %>
+</ol>
+
+

@@ -1,0 +1,12 @@
+
+<div>
+  <%= simple_form_for([carpet, booking]) do |c| %>
+    <%= c.label :startdate, "Start Date: " %>
+    <%= c.input_field :startdate %>
+    <%= c.label :enddate, "End Date: " %>
+    <%= c.input_field :enddate %>
+    <%= c.submit 'Save this Booking', class: "btn btn-success"%>
+  <% end %>
+</div>
+
+
