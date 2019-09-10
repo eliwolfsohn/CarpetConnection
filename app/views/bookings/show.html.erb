@@ -1,0 +1,11 @@
+<h2>Name: <strong><%=  @booking.carpet.name %></strong></h2>
+<p>Price in Camels: <strong><%= @booking.carpet.price %></strong></p>
+<p>Description: <strong><%= @booking.carpet.description %></strong></p>
+<p>Speed (km/min): <strong><%= @booking.carpet.speed %></strong></p>
+<p>Number of supported passengers: <strong><%= @booking.carpet.passengers %></strong></p>
+<p>Owner: <strong><%= @booking.carpet.user_id %></strong></p>
+<p>Start Date: <strong><%= @booking.startdate %></strong></p>
+<p>End Date: <strong><%= @booking.enddate %></strong></p>
+
+<%= link_to 'Edit Booking', edit_carpet_booking_path(@booking.carpet, @booking), class: "btn btn-info" %>
+<%= link_to 'Delete this Booking', carpet_booking_path(@booking.carpet, @booking), method: :delete, data: { confirm: "Are You Sure?"},class: "btn btn-warning" %>
