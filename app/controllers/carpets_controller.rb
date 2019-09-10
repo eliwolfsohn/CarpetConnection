@@ -1,8 +1,13 @@
 class CarpetsController < ApplicationController
 
   def index
-    @carpets = Carpet.all
-    # authorize @carpet
+    @flats = Flat.geocoded #returns flats with coordinates
+
+    @markers = @flats.map do |flat|
+    {
+      lat: flat.latitude,
+      lng: flat.longitude
+    }
   end
 
   def show
