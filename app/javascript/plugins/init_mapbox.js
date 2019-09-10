@@ -1,3 +1,4 @@
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 import mapboxgl from 'mapbox-gl';
 
 const mapElement = document.getElementById('map');
@@ -10,10 +11,14 @@ const buildMap = () => {
   });
 };
 
+
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
+    const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
+
     new mapboxgl.Marker()
       .setLngLat([ marker.lng, marker.lat ])
+      .setPopup(popup) // add this
       .addTo(map);
   });
 };
@@ -30,26 +35,12 @@ const initMapbox = () => {
     const markers = JSON.parse(mapElement.dataset.markers);
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
+    map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken }));
   }
 };
 
 export { initMapbox };
 
-const addMarkersToMap = (map, markers) => {
-  markers.forEach((marker) => {
-    const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
-
-    new mapboxgl.Marker()
-      .setLngLat([ marker.lng, marker.lat ])
-      .setPopup(popup) // add this
-      .addTo(map);
-  });
-};
-
-import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
-if (mapElement) {
-  map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken }));
-}
 
 
 
