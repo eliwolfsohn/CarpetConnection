@@ -76,6 +76,14 @@ Carpet.create!([{
   description: 'we salute you',
   address: "Rome",
   user_id: 1
+},{
+  name: "Ian rulez",
+  price: 100,
+  passengers: 5,
+  speed: 4000,
+  description: 'ya tu sabes',
+  address: "Chile",
+  user_id: 1
 }
 ])
 puts 'seeding concluded'
