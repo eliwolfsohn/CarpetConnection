@@ -2,3 +2,32 @@
 @import "alert";
 @import "avatar";
 @import "navbar";
+
+.card{
+  border: none;
+  display: flex;
+  text-decoration: none !important;
+  color: inherit;
+}
+.card:hover{
+  text-decoration: none !important;
+  color: inherit;
+}
+
+.card-title{
+  font-size: 24px;
+  text-align: center;
+}
+.card-details{
+
+  p{
+    font-size: 18px;
+  }
+}
+
+
+#index-title{
+  text-align: center;
+  font-size: 36px;
+  margin: 50px 0;
+}
