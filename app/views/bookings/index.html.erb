@@ -2,7 +2,11 @@
 <ol>
   <% @bookings.each do |b| %>
     <li>
-      <%= link_to b.startdate, carpet_booking_path(b.carpet, b) %>
+      <h2>  <%= link_to b.carpet.name, carpet_booking_path(b.carpet, b) %></h2>
+      <p><strong>Rental Start Date:</strong> <%= b.startdate.strftime('%Y-%m-%d') %></p>
+      <p><strong>Rental End Date: </strong><%= b.enddate.strftime('%Y-%m-%d') %></p>
+      <p><strong>Price Per Day: </strong><%= b.carpet.price %> Camels</p>
+
     </li>
   <% end %>
 </ol>
