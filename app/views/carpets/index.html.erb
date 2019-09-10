@@ -2,9 +2,17 @@
 <h2>Available Carpets: </h2>
 <ol>
   <% @carpets.each do |carpet| %>
-    <li>
-      <%= link_to carpet.name.capitalize, carpet_path(carpet) %>
-    </li>
+  <li>
+    <%= link_to carpet.name.capitalize, carpet_path(carpet) %>
+    <p><strong>Can be found at:</strong> <%= carpet.address %> </p>
+  </li>
   <% end %>
 </ol>
+<div
+  id="map"
+  style="width: 50%;
+  height: 400px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
 

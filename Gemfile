@@ -16,6 +16,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
 gem 'pundit'
+gem 'geocoder'
 gem 'pickadate-rails'
 
 group :development do

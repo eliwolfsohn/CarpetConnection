@@ -4,8 +4,16 @@
 
 class CarpetsController < ApplicationController
   def index
-    @carpets = Carpet.all
-    # authorize @carpet
+    @carpets = Carpet.geocoded
+
+    @markers = @carpets.map do |carpet|
+      {
+        lat: carpet.latitude,
+        lng: carpet.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { carpet: carpet }),
+        image_url: helpers.asset_url('magiccarpet.jpg')
+      }
+    end
   end
 
   def show
@@ -53,7 +61,7 @@ class CarpetsController < ApplicationController
   private
 
   def carpet_params
-    params.require(:carpet).permit(:name, :price, :speed, :description, :passengers)
+    params.require(:carpet).permit(:name, :price, :speed, :description, :passengers, :address)
   end
 
   def find_carpet
