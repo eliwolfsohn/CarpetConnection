@@ -13,6 +13,31 @@ class BookingsController < ApplicationController
     end
   end
 
+  def show
+    @booking = Booking.find(params[:id])
+  end
+
+  def index
+    @bookings = Booking.all
+    # authorize @carpet
+  end
+
+  def edit
+    @booking = Booking.find(params[:id])
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_param)
+    redirect_to carpet_booking_path(@booking)
+  end
+
+   def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to carpet_bookings_path
+  end
+
   private
 
   def booking_param
