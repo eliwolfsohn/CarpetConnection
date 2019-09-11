@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.6.3'
 
 gem 'bootsnap', require: false
-gem 'jbuilder', '~> 2.0'
+# gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.2.3'
@@ -18,6 +18,8 @@ gem 'devise'
 gem 'pundit'
 gem 'geocoder'
 gem 'pickadate-rails'
+gem 'cloudinary', '~> 1.9.1'
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'
