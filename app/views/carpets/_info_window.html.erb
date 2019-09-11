@@ -1,3 +1,9 @@
-<h2><%= carpet.name %></h2>
-<p>Location: <%= carpet.address %></p>
-<p>Price: <%= carpet.price %></p>
+
+<div class="card" style="max-width: 12rem;">
+  <img src= "<%= cl_image_path carpet.photo, crop: :fill %>" class="card-img-top" alt="#">
+  <div class="card-body">
+    <h5 class="card-title"><%= carpet.name %></h5>
+    <p class="card-text">Location: <%= carpet.address %></p>
+    <p class="card-text">Location: <%= carpet.price %></p>
+  </div>
+</div>
