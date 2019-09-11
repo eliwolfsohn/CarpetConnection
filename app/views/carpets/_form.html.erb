@@ -1,22 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
 
-<div>
+<div class="new-carpet">
+  <h3>Please Enter Your Carpet Information</h3>
   <%= simple_form_for @carpet do |c| %>
-    <%= c.label :name, "Name: " %>
-    <%= c.input_field :name %>
-    <%= c.label :price, "Camels"%>
-    <%= c.input_field :price %>
-    <%= c.label :speed, "Speed: "%>
-    <%= c.input_field :speed %>
+
+    <%= c.input :name, input_html: { class: "xyz"}  %>
+
+    <%= c.input :price %>
+
+    <%= c.input :speed %>
     <%= c.input :photo %>
     <%= c.input :photo_cache, as: :hidden %>
-    <%= c.label :speed, "Address: "%>
-    <%= c.input_field :address %>
-    <%= c.label :passengers, "Passengers: ", collection: 0..50 %>
-    <%= c.input_field :passengers %>
-    <%= c.label :description, "Description: " %>
-    <%= c.input_field :description %>
-    <%= c.submit 'Save this Carpet', class: "btn btn-success"%>
+
+    <%= c.input :address %>
+
+    <%= c.input :passengers %>
+
+    <%= c.input :description %>
+    <%= c.submit 'Save this Carpet', class: "btn-block"%>
   <% end %>
 </div>
 
 
+
+
+    </div>
+  </div>
+</div>

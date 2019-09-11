@@ -3,7 +3,7 @@ class Carpet < ApplicationRecord
   validates :name, uniqueness: true, presence: true
   validates :price, presence: true
   validates :speed, presence: true
-  validates :passengers, presence: true
+  validates :passengers, presence: true, inclusion: { in: (0..50)}
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
   mount_uploader :photo, PhotoUploader
