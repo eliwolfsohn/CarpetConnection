@@ -1,0 +1,22 @@
+
+<h1>Your listed carpets:</h1>
+
+<% @bookings.each do |booking|%>
+
+<div class="d-flex mt-3 our-booking">
+  <div class="img"></div>
+  <h4><%= booking.carpet.name %></h4>
+  <p><%= booking.carpet.description %></p>
+  <p><%= booking.carpet.address %></p>
+  <div class="dates">
+     <p> <%= booking.startdate %></p>
+      <p> <%= booking.enddate %></p>
+  </div>
+  <div>
+    <%= link_to "Show carpet", carpet_path(booking.carpet)%>
+  </div>
+
+
+</div>
+<% end %>
+
