@@ -1,11 +1,12 @@
 .navbar{
-  background-color: rgba(124,0,0,0.4);
+  background-color: #A93838;
   justify-content: space-between;
 
   a {
     font-family: "Gayathri", "sans-serif";
 
   }
+  align-items: stretch;
 }
 
 .navbar .navbar-collapse {
@@ -28,3 +29,4 @@
 .avatar {
   height: 100%;
 }
+
