@@ -6,6 +6,7 @@ class PagesController < ApplicationController
 
   def profile
     @bookings = current_user.bookings
+    @listed_carpets = current_user.carpets
   end
 end
 
