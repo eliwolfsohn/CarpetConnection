@@ -115,7 +115,7 @@ Carpet.create!([{
 },{
   name: "Bens Rug",
   price: 1,
-  passengers: 1000,
+  passengers: 49,
   speed: 1,
   description: 'Better Hurry UP',
   address: "Manila",
