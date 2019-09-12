@@ -17,6 +17,7 @@
       <div class="row">
               <p id="heading-carpet"><%=  @carpet.name %></p>
       </div>
+    <% if current_user.id == @carpet.user.id %>
       <div class="buttons">
            <td>
         <%= link_to edit_carpet_path(@carpet), class: 'btn btn-default' do %>
@@ -29,6 +30,7 @@
         <span class="fas fa-trash"></span>
       </td>
       </div>
+    <% end %>
 
       <p id="carpet-price"> <%= @carpet.price %> Camels</p>
       <p class="desc "><%= @carpet.description %></p>
@@ -39,6 +41,4 @@
 
 
   </div>
-
-
 </div>
