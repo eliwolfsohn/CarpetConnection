@@ -1,77 +1,77 @@
-<div
+
+<div class="text-center mx-2 my-2">
+  <h5 class="m-3" id="index-title">Popular Carpets Today</h5>
+  <div class="row mx-2 my-2">
+    <div id="myCarousel" class="carousel slide col-12" data-ride="carousel">
+     <div class="row">
+         <a class="carousel-control-prev text-dark" href="#myCarousel" role="button" data-slide="prev">
+           <span class="fa fa-chevron-left align-top" aria-hidden="true"></span>
+         </a>
+         <a class="carousel-control-next text-dark" href="#myCarousel" role="button" data-slide="next">
+           <span class="fa fa-chevron-right align-top" aria-hidden="true"></span>
+         </a>
+         <div class="carousel-inner" role="listbox">
+          <div class="carousel-item active">
+            <div class="container">
+            <div class="row">
+             <% @carpets.in_groups_of(4, false).first.each do |carpet| %>
+              <div class="col-md-3 col-sm-6 col-xs-12">
+             <%= link_to carpet_path(carpet), class: "card carpet-card " do %>
+             <%= cl_image_tag carpet.photo %>
+             <p class="card-title"><strong><%= carpet.name %></strong></p>
+             <div class="card-details">
+              <p.small><%= carpet.description %></p>
+            </div>
+            <% end%>
+              </div>
+            <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="container">
+          <div class="row">
+           <% @carpets.in_groups_of(4, false).second.each do |carpet| %>
+           <div class="col-md-3 col-sm-6 col-xs-12">
+           <%= link_to carpet_path(carpet), class: "card carpet-card" do %>
+           <%= cl_image_tag carpet.photo %>
+           <p class="card-title"><strong><%= carpet.name %></strong></p>
+           <div class="card-details">
+            <p.small><%= carpet.description %></p>
+          </div>
+          <% end%>
+             </div>
+          <% end %>
+        </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="container">
+        <div class="row">
+         <% @carpets.in_groups_of(4, false).third.each do |carpet| %>
+         <div class="col-md-3 col-sm-6 col-xs-12">
+         <%= link_to carpet_path(carpet), class: "card carpet-card" do %>
+         <%= cl_image_tag carpet.photo %>
+         <p class="card-title"><strong><%= carpet.name %></strong></p>
+         <div class="card-details">
+          <p.small> <%= carpet.description %></p>
+        </div>
+        <% end%>
+      </div>
+        <% end %>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+  <div
   id="map"
-  style="width: 100%;
-  height: 600px;"
+  class="container-fluid offset-1.5 mt-5"
+  style="width: 75%;
+  height: 500px;"
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-></div>
-
-<p id="index-title">Find Carpets Near You</p>
-
-<div class="container text-center my-3">
-    <div class="row mx-auto my-auto">
-        <div id="myCarousel" class="carousel slide w-100" data-ride="carousel">
-        	<div class="row">
-        	    <div class="col-12">
-        	        <a class="carousel-control-prev text-dark" href="#myCarousel" role="button" data-slide="prev">
-        	            <span class="fa fa-chevron-left" aria-hidden="true"></span>
-        	            <span class="sr-only">Previous</span>
-        	        </a>
-        	        <a class="carousel-control-next text-dark" href="#myCarousel" role="button" data-slide="next">
-        	            <span class="fa fa-chevron-right" aria-hidden="true"></span>
-        	            <span class="sr-only">Next</span>
-        	        </a>
-        	    </div>
-        	</div>
-            <div class="carousel-inner" role="listbox">
-                <div class="carousel-item py-5 active">
-										<div class="row">
-											<% @carpets.in_groups_of(4, false).first.each do |carpet| %>
-												<%= link_to carpet_path(carpet), class: "card col-md-3 col-sm-6 col-xs-12" do %>
-															<img src="https://us.123rf.com/450wm/ljupco/ljupco1007/ljupco100700004/7288016-an-arab-person-sitting-on-a-flying-carpet-isolated-on-white-background.jpg?ver=6">
-															<p class="card-title"><%= carpet.name %></p>
-															<div class="card-details">
-																<p><strong>Seats: </strong><%= carpet.passengers %></p>
-																<p><strong>Great Milage</strong> </p>
-																<p><strong>Description:</strong> <%= carpet.description %></p>
-															</div>
-													<% end%>
-											<% end %>
-										</div>
-                </div>
-                <div class="carousel-item py-5">
-										<div class="row">
-											<% @carpets.in_groups_of(4, false).second.each do |carpet| %>
-												<%= link_to carpet_path(carpet), class: "card col-md-3 col-sm-6 col-xs-12" do %>
-															<img src="https://us.123rf.com/450wm/ljupco/ljupco1007/ljupco100700004/7288016-an-arab-person-sitting-on-a-flying-carpet-isolated-on-white-background.jpg?ver=6">
-															<p class="card-title"><%= carpet.name %></p>
-															<div class="card-details">
-																<p><strong>Seats: </strong><%= carpet.passengers %></p>
-																<p><strong>Great Milage</strong> </p>
-																<p><strong>Description:</strong> <%= carpet.description %></p>
-															</div>
-													<% end%>
-											<% end %>
-										</div>
-                </div>
-                <div class="carousel-item py-5">
-                    <div class="row">
-											<% @carpets.in_groups_of(4, false).third.each do |carpet| %>
-												<%= link_to carpet_path(carpet), class: "card col-md-3 col-sm-6 col-xs-12" do %>
-															<img src="https://us.123rf.com/450wm/ljupco/ljupco1007/ljupco100700004/7288016-an-arab-person-sitting-on-a-flying-carpet-isolated-on-white-background.jpg?ver=6">
-															<p class="card-title"><%= carpet.name %></p>
-															<div class="card-details">
-																<p><strong>Seats: </strong><%= carpet.passengers %></p>
-																<p><strong>Great Milage</strong> </p>
-																<p><strong>Description:</strong> <%= carpet.description %></p>
-															</div>
-													<% end%>
-											<% end %>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+  ></div>
 </div>
-
+</div>
