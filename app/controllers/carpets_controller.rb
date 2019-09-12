@@ -11,7 +11,7 @@ class CarpetsController < ApplicationController
         lat: carpet.latitude,
         lng: carpet.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { carpet: carpet }),
-        image_url: helpers.asset_url('magiccarpet.jpg')
+        image_url: 'carpet.remote_photo_url'
       }
     end
   end
