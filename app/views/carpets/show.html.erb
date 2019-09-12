@@ -1,25 +1,44 @@
+<div class="container carpet-show-contain row">
+  <div class="col-xs-7 margin-top-50">
+    <div class="carpet-pic left-side">
+      <%= cl_image_tag @carpet.photo, crop: :fill %>
+    </div>
 
 
-<%= cl_image_tag @carpet.photo, height: 300, width: 400, crop: :fill %>
+    <div class="Date left-side">
+          <%= simple_form_for([@carpet, @booking]) do |c| %>
+      <%= c.input :startdate, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= c.input :enddate, as: :string, required: false, input_html: {class: "datepicker"} %>
+      <%= c.submit 'Book this Carpet', class: "btn btn-success"%>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-xs-5 product margin-top-50">
+      <div class="row">
+              <p id="heading-carpet"><%=  @carpet.name %></p>
+      </div>
+    <% if current_user.id == @carpet.user.id %>
+      <div class="buttons">
+           <td>
+        <%= link_to edit_carpet_path(@carpet), class: 'btn btn-default' do %>
+        <span class="fas fa-pencil-alt"></span>
+        <% end %>
+      </td>
+      <td>
+        <%= link_to carpet_path(@carpet), method: :delete, data: { confirm: "Are You Sure?"}, class: 'btn btn-default' do %>
+        <% end %>
+        <span class="fas fa-trash"></span>
+      </td>
+      </div>
+    <% end %>
 
-<h2>Name: <strong><%=  @carpet.name %></strong></h2>
-<p>Price in Camels: <strong><%= @carpet.price %></strong></p>
-<p>Description: <strong><%= @carpet.description %></strong></p>
-<p>Speed (km/min): <strong><%= @carpet.speed %></strong></p>
-<p>Number of supported passengers: <strong><%= @carpet.passengers %></strong></p>
-<p>Owner: <strong><%= @carpet.user_id %></strong></p>
-<p>Address: <strong><%= @carpet.address %></strong></p>
+      <p id="carpet-price"> <%= @carpet.price %> Camels</p>
+      <p class="desc "><%= @carpet.description %></p>
+      <p class="desc fas fa-tachometer-alt">   <%= @carpet.speed %></p>
+      <p class="desc fas fa-users">   <%= @carpet.passengers %></p>
+      <p class="desc far fa-user">    <%= @carpet.user_id %></p>
+      <p class="desc fas fa-map-marker-alt">    <%= @carpet.address %></p>
 
-<%= link_to 'Edit Carpet', edit_carpet_path(@carpet), class: "btn btn-info" %>
-<%= link_to 'Delete this Waste of Fabric', carpet_path(@carpet), method: :delete, data: { confirm: "Are You Sure?"},class: "btn btn-warning" %>
 
-<div>
-  <%= simple_form_for([@carpet, @booking]) do |c| %>
-  <%= c.input :startdate, as: :string, required: false, input_html: {class: "datepicker"} %>
-  <%= c.input :enddate, as: :string, required: false, input_html: {class: "datepicker"} %>
-  <%= c.submit 'Book this Carpet', class: "btn btn-success"%>
-  <% end %>
+  </div>
 </div>
-
-
-
