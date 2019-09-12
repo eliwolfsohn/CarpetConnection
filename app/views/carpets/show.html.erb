@@ -1,15 +1,12 @@
-<div class="container carpet-show-contain row">
+<div class="row">
+  <div class="col-3"></div>
+<div class="container carpet-show-contain row col-6">
   <div class="col-xs-7 margin-top-50">
     <div class="carpet-pic left-side">
       <%= cl_image_tag @carpet.photo, crop: :fill %>
     </div>
 
-    <div class="Date left-side">
-          <%= simple_form_for([@carpet, @booking]) do |c| %>
-      <%= c.input :startdate, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= c.submit 'Book this Carpet', class: "btn btn-success"%>
-      <% end %>
-    </div>
+
   </div>
   <div class="col-xs-5 product margin-top-50">
       <div class="row">
@@ -35,6 +32,15 @@
       <p class="desc fas fa-tachometer-alt">   <%= @carpet.speed %> km/min</p>
       <p class="desc fas fa-users">   <%= @carpet.passengers %></p>
       <p class="desc fas fa-map-marker-alt">    <%= @carpet.address %></p>
+      <div class="Date left-side">
+            <%= simple_form_for([@carpet, @booking]) do |c| %>
+        <%= c.input :startdate, as: :string, required: false, input_html: {class: "datepicker", placeholder: "Select your Booking Dates"}, label: false %>
 
+      </div>
   </div>
+          <%= c.submit 'Book this Carpet', class: "btn btn-success book-btn"%>
+        <% end %>
 </div>
+<div class="col-3"></div>
+</div>
+
