@@ -1,9 +1,13 @@
 
 <div class="card" style="max-width: 12rem;">
+  <%= link_to carpet_path(carpet) do %>
   <img src= "<%= cl_image_path carpet.photo, crop: :fill %>" class="card-img-top" alt="#">
+  <% end %>
   <div class="card-body">
     <h5 class="card-title"><%= carpet.name %></h5>
     <p class="card-text">Location: <%= carpet.address %></p>
     <p class="card-text">Location: <%= carpet.price %></p>
   </div>
 </div>
+
+
