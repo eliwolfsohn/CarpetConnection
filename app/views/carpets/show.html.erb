@@ -4,11 +4,9 @@
       <%= cl_image_tag @carpet.photo, crop: :fill %>
     </div>
 
-
     <div class="Date left-side">
           <%= simple_form_for([@carpet, @booking]) do |c| %>
       <%= c.input :startdate, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= c.input :enddate, as: :string, required: false, input_html: {class: "datepicker"} %>
       <%= c.submit 'Book this Carpet', class: "btn btn-success"%>
       <% end %>
     </div>
@@ -32,13 +30,11 @@
       </div>
     <% end %>
 
-      <p id="carpet-price"> <%= @carpet.price %> Camels</p>
+      <p id="carpet-price"> <%= @carpet.price %> Camels/Day</p>
       <p class="desc "><%= @carpet.description %></p>
       <p class="desc fas fa-tachometer-alt">   <%= @carpet.speed %></p>
       <p class="desc fas fa-users">   <%= @carpet.passengers %></p>
-      <p class="desc far fa-user">    <%= @carpet.user_id %></p>
       <p class="desc fas fa-map-marker-alt">    <%= @carpet.address %></p>
-
 
   </div>
 </div>

@@ -93,14 +93,14 @@ Carpet.create!([{
   remote_photo_url: "https://cdn20.pamono.com/p/s/4/8/482920_f2r70mwwd2/antique-wool-carpet.jpg"
 
 },{
-  name: "Ian rulez",
-  price: 100,
-  passengers: 5,
-  speed: 4000,
-  description: 'ya tu sabes',
-  address: "Chile",
+  name: "Lawrence of Carpetaria",
+  price: 500,
+  passengers: 100,
+  speed: 3142,
+  description: 'Been There, Done That... And Back Again For More.',
+  address: "Akaba",
   user_id: 1,
-  remote_photo_url: "https://cdn20.pamono.com/p/s/4/8/482920_f2r70mwwd2/antique-wool-carpet.jpg"
+  remote_photo_url: "https://daily.jstor.org/wp-content/uploads/2016/06/Qashqai_1050x700.jpg"
 
 },{
   name: "General Falafel Gabay",
