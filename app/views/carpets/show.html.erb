@@ -7,11 +7,13 @@
 <p>Description: <strong><%= @carpet.description %></strong></p>
 <p>Speed (km/min): <strong><%= @carpet.speed %></strong></p>
 <p>Number of supported passengers: <strong><%= @carpet.passengers %></strong></p>
-<p>Owner: <strong><%= @carpet.user_id %></strong></p>
+<p>Owner: <strong><%= User.find(@carpet.user_id).email %></strong></p>
 <p>Address: <strong><%= @carpet.address %></strong></p>
 
-<%= link_to 'Edit Carpet', edit_carpet_path(@carpet), class: "btn btn-info" %>
-<%= link_to 'Delete this Waste of Fabric', carpet_path(@carpet), method: :delete, data: { confirm: "Are You Sure?"},class: "btn btn-warning" %>
+<% if current_user.id == @carpet.user.id %>
+  <%= link_to 'Edit Carpet', edit_carpet_path(@carpet), class: "btn btn-info" %>
+  <%= link_to 'Delete this Waste of Fabric', carpet_path(@carpet), method: :delete, data: { confirm: "Are You Sure?"},class: "btn btn-warning" %>
+<% end  %>
 
 <div>
   <%= simple_form_for([@carpet, @booking]) do |c| %>
