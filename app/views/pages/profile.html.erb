@@ -1,5 +1,11 @@
 <!-- link to take me to edit my profile / add a picture -->
-<%= link_to "Edit My Profile", edit_user_registration_path %>
+<div class="header">
+  <h1>
+     <%= link_to "Edit My Profile", edit_user_registration_path %>
+  </h1>
+
+</div>
+
 
 <!-- My bookings Section, link to carpets index if no booked carpets -->
 <% if @bookings.length == 0 %>
@@ -12,42 +18,58 @@
   <div class="header">
     <h1>Your Booked Carpets:</h1>
   </div>
-  <% @bookings.each do |booking|%>
-    <div class="d-flex mt-3 our-booking">
-      <%= cl_image_tag booking.carpet.photo, class: "img"%>
-      <h4><%= booking.carpet.name %></h4>
-      <p><%= booking.carpet.description %></p>
-      <p><%= booking.carpet.address %></p>
-      <div class="dates">
-        <p> <%= booking.startdate %></p>
-        <p> <%= booking.enddate %></p>
-      </div>
-      <div>
-        <%= link_to "Show carpet", carpet_path(booking.carpet)%>
-      </div>
+  <div class="container">
+    <div class="row space-between">
+            <% @bookings.each do |booking|%>
+  <%= link_to carpet_path(booking.carpet), class: "no-hover" do%>
+    <div class="our-booking card-product">
+      <% if booking.carpet.photo.file  %>
+        <%= cl_image_tag booking.carpet.photo %>
+        <% else %>
+        <%= image_tag "supreme.jpg" %>
+        <% end %>
+        <div class="card-product-infos">
+          <h2><%= booking.carpet.name %></h2>
+          <p><%= booking.carpet.description.truncate(23) %></p>
+          <div class="dates">
+            <i class="fas fa-calendar-alt"></i>
+            <%= booking.startdate.strftime("%d / %m")   %> - <%= booking.enddate.strftime("%d / %m") %>
+          </div>
+        </div>
     </div>
+    <% end %>
   <% end %>
-<% end %>
-
-
-
-<!-- My listed carpets Section, link to list a carpet if no carpets listed -->
-<div class="header">
-  <h1>Your Listed Carpets:</h1>
-</div>
-
-<% @listed_carpets.each do |carpet|%>
-
-
-<div class="d-flex mt-3 our-booking">
-  <%= cl_image_tag carpet.photo, class: "img"%>
-  <h4><%= carpet.name %></h4>
-  <p><%= carpet.description %></p>
-  <p><%= carpet.address %></p>
-  <div>
-    <%= link_to "Edit Carpet", carpet_path(carpet)%>
+    </div>
   </div>
-
-
-</div>
 <% end %>
+<!-- My listed carpets Section, link to list a carpet if no carpets listed -->
+<% if @listed_carpets.length == 0 %>
+  <%= link_to new_carpet_path do %>
+    <p class="header">
+      Add a carpet and fly with jesus!
+    </p>
+  <% end %>
+<% else %>
+  <div class="header">
+    <h1>Your Listed Carpets:</h1>
+  </div>
+  <div class="container">
+    <div class="row space-between">
+    <% @listed_carpets.each do |carpet|%>
+      <div class="d-flex mt-3 our-booking card-product">
+        <%= cl_image_tag carpet.photo, class: "img"%>
+        <div class = "details">
+        <h4><%= carpet.name %></h4>
+        <p><%= carpet.description %></p>
+        <p><%= carpet.address %></p>
+      </div>
+        <div class="a">
+          <%= link_to "Show carpet", carpet_path(carpet)%>
+        </div>
+      </div>
+     <% end %>
+    </div>
+  </div>
+<% end %>
+
+
