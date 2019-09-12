@@ -33,7 +33,9 @@
           <p><%= booking.carpet.description.truncate(23) %></p>
           <div class="dates">
             <i class="fas fa-calendar-alt"></i>
+            <% if booking.startdate %>
             <%= booking.startdate.strftime("%d / %m")   %> - <%= booking.enddate.strftime("%d / %m") %>
+            <% end %>
           </div>
         </div>
     </div>
