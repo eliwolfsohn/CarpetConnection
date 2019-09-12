@@ -1,7 +1,7 @@
 <div class="text-center mx-2 my-2">
   <h5 class="m-3" id="index-title">Popular Carpets Today</h5>
   <div class="row mx-2 my-2">
-    <div id="myCarousel" class="carousel slide col-8" data-ride="carousel">
+    <div id="myCarousel" class="carousel slide col-10" data-ride="carousel">
      <div class="row">
          <a class="carousel-control-prev text-dark" href="#myCarousel" role="button" data-slide="prev">
            <span class="fa fa-chevron-left align-top" aria-hidden="true"></span>
@@ -13,8 +13,8 @@
           <div class="carousel-item active">
             <div class="row">
              <% @carpets.in_groups_of(4, false).first.each do |carpet| %>
-             <%= link_to carpet_path(carpet), class: "card col-md-3 col-sm-6 col-xs-12 border" do %>
-             <img src="https://us.123rf.com/450wm/ljupco/ljupco1007/ljupco100700004/7288016-an-arab-person-sitting-on-a-flying-carpet-isolated-on-white-background.jpg?ver=6">
+             <%= link_to carpet_path(carpet), class: "card col-md-3 col-sm-6 col-xs-12 " do %>
+             <img src=carpet.remote_photo_url>
              <p class="card-title"><%= carpet.name %></p>
              <div class="card-details">
               <p.small><strong>Seats: </strong><%= carpet.passengers %></p>
@@ -29,7 +29,7 @@
         <div class="carousel-item">
           <div class="row">
            <% @carpets.in_groups_of(4, false).second.each do |carpet| %>
-           <%= link_to carpet_path(carpet), class: "card col-md-3 col-sm-6 col-xs-12 border" do %>
+           <%= link_to carpet_path(carpet), class: "card col-md-3 col-sm-6 col-xs-12 " do %>
            <img src="https://us.123rf.com/450wm/ljupco/ljupco1007/ljupco100700004/7288016-an-arab-person-sitting-on-a-flying-carpet-isolated-on-white-background.jpg?ver=6">
            <p class="card-title"><%= carpet.name %></p>
            <div class="card-details">
@@ -45,7 +45,7 @@
       <div class="carousel-item">
         <div class="row">
          <% @carpets.in_groups_of(4, false).third.each do |carpet| %>
-         <%= link_to carpet_path(carpet), class: "card col-md-3 col-sm-6 col-xs-12 border" do %>
+         <%= link_to carpet_path(carpet), class: "card col-md-3 col-sm-6 col-xs-12 " do %>
          <img src="https://us.123rf.com/450wm/ljupco/ljupco1007/ljupco100700004/7288016-an-arab-person-sitting-on-a-flying-carpet-isolated-on-white-background.jpg?ver=6">
          <p class="card-title"><%= carpet.name %></p>
          <div class="card-details">
@@ -63,9 +63,9 @@
 </div>
   <div
   id="map"
-  class="col-4"
-  style="width: 100%;
-  height: 600px;"
+  class="row"
+  style="width: 75%;
+  height: 500px;"
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   ></div>
