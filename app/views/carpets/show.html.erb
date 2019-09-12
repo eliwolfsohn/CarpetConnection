@@ -24,15 +24,15 @@
       </td>
       <td>
         <%= link_to carpet_path(@carpet), method: :delete, data: { confirm: "Are You Sure?"}, class: 'btn btn-default' do %>
-        <% end %>
         <span class="fas fa-trash"></span>
+        <% end %>
       </td>
       </div>
     <% end %>
 
-      <p id="carpet-price"> <%= @carpet.price %> Camels/Day</p>
+      <p id="carpet-price"> <%= @carpet.price %> Camels</p>
       <p class="desc "><%= @carpet.description %></p>
-      <p class="desc fas fa-tachometer-alt">   <%= @carpet.speed %></p>
+      <p class="desc fas fa-tachometer-alt">   <%= @carpet.speed %> km/min</p>
       <p class="desc fas fa-users">   <%= @carpet.passengers %></p>
       <p class="desc fas fa-map-marker-alt">    <%= @carpet.address %></p>
 
