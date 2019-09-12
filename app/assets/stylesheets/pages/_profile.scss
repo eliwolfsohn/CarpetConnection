@@ -1,15 +1,14 @@
 .our-booking {
-  width: 100vw;
+
   justify-content: space-between;
   align-items: center;
   background-color: white;
 }
 
-.img {
-  width: 400px;
-  height: 200px;
-  background-color: lightgrey;
-}
+
+.space-between{
+  justify-content: space-between;
+  align-items: center;}
 
 .header{
   margin: 50px;
@@ -17,4 +16,66 @@ h1 {
   font-family: 'Crimson Text', serif;
   text-align: center;
   }
+}
+
+.card-product {
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  margin: 20px;
+  width: 330px;
+  height: 200px;
+}
+
+.card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 18px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+  width: 100%;
+}
+
+.no-hover:hover {
+  text-decoration: none;
+}
+
+.img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.details {
+  padding: 16px;
+  width: 100%;
+}
+
+.a {
+  padding: 16px;
+  width: 100%;
+}
+
+.space-between {
+margin: 10px auto;
 }
