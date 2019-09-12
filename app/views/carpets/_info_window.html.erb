@@ -1,13 +1,14 @@
 
-<div class="card" style="max-width: 12rem;">
+<div class="card-info-map" style="max-width: 12rem;">
   <%= link_to carpet_path(carpet) do %>
-  <img src= "<%= cl_image_path carpet.photo, crop: :fill %>" class="card-img-top" alt="#">
+  <img src= "<%= cl_image_path carpet.photo, crop: :fill %>" class="card-img-map" alt="#">
   <% end %>
-  <div class="card-body">
-    <h5 class="card-title"><%= carpet.name %></h5>
-    <p class="card-text">Location: <%= carpet.address %></p>
-    <p class="card-text">Location: <%= carpet.price %></p>
+  <div class="card-body-map">
+    <h2 class="card-title-map"><%= carpet.name %></h2>
+    <p class="card-text-map">Location: <%= carpet.address %></p>
+    <p class="card-text-map "><%= carpet.price %> <img src="https://image.flaticon.com/icons/svg/47/47030.svg" class="camel">/day  </p>
   </div>
 </div>
+
 
 
