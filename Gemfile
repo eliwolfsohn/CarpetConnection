@@ -19,7 +19,7 @@ gem 'pundit'
 gem 'geocoder'
 gem 'pickadate-rails'
 gem 'cloudinary', '~> 1.9.1'
-gem 'carrierwave', '~> 1.2'
+gem 'carrierwave', '~> 1.3'
 
 
 group :development do
